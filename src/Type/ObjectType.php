@@ -1465,6 +1465,15 @@ class ObjectType implements TypeWithClassName, SubtractableType
 		return $this;
 	}
 
+	public function narrowItemType(Type $narrowedItemType): Type
+	{
+		if ($this->isOffsetAccessible()->no()) {
+			return new ErrorType();
+		}
+
+		return $this;
+	}
+
 	public function unsetOffset(Type $offsetType): Type
 	{
 		if ($this->isOffsetAccessible()->no()) {

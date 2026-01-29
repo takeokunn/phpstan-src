@@ -455,6 +455,11 @@ class StaticType implements TypeWithClassName, SubtractableType
 		return $this->getStaticObjectType()->setExistingOffsetValueType($offsetType, $valueType);
 	}
 
+	public function narrowItemType(Type $narrowedItemType): Type
+	{
+		return $this->getStaticObjectType()->narrowItemType($narrowedItemType);
+	}
+
 	public function unsetOffset(Type $offsetType): Type
 	{
 		return $this->getStaticObjectType()->unsetOffset($offsetType);

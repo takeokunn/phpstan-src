@@ -160,6 +160,11 @@ class HasOffsetType implements CompoundType, AccessoryType
 		return $this;
 	}
 
+	public function narrowItemType(Type $narrowedItemType): Type
+	{
+		return $this;
+	}
+
 	public function unsetOffset(Type $offsetType): Type
 	{
 		if ($this->offsetType->isSuperTypeOf($offsetType)->yes()) {
